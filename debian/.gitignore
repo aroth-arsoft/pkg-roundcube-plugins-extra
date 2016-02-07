@@ -1,0 +1,4 @@
+/roundcube-plugins-extra/
+/files
+*.debhelper.log
+*.substvars

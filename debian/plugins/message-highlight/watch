@@ -1,0 +1,3 @@
+version=3
+opts="component=message-highlight,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/message-highlight-$1$2/g" \
+https://github.com/corbosman/message_highlight/releases /corbosman/message_highlight/archive/([\d\.]*)\.tar\..*

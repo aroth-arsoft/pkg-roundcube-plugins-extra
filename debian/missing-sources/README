@@ -1,0 +1,12 @@
+Missing source files
+--------------------
+
+For Debian all missing sources are bundled in this directory. They have been
+grabbed from the various upstream projects.
+
+Last synchronization was made at 2015-10-25.
+
+Files: sieverules/jquery.maskedinput.min.js
+Project: jQuery Masked Input Plugin
+License: Expat
+Source: https://raw.githubusercontent.com/digitalBush/jquery.maskedinput/1.4.1/dist/jquery.maskedinput.js

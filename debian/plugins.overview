@@ -1,0 +1,47 @@
+Plugin: compose-addressbook
+Source: https://github.com/corbosman/compose_addressbook/archive/8.0.4.tar.gz
+Version: 8.0.4
+
+Plugin: contextmenu
+Source: https://github.com/JohnDoh/Roundcube-Plugin-Context-Menu/archive/2.1.2.tar.gz
+Version: 2.1.2
+
+Plugin: dkimstatus
+Source: http://jve.linuxwall.info/ressources/code/dkimstatus-v0.4.8.tar
+Version: 0.4.8
+
+Plugin: dovecot-impersonate
+Source: https://github.com/corbosman/dovecot_impersonate/archive/2.1.tar.gz
+Version: 2.1
+
+Plugin: fail2ban
+Source: https://github.com/mattrude/rc-plugin-fail2ban/archive/1.3.tar.gz
+Version: 1.3
+
+Plugin: keyboard-shortcuts
+Source: https://github.com/corbosman/keyboard_shortcuts/archive/2.4.1.tar.gz
+Version: 2.4.1
+
+Plugin: listcommands
+Source: https://github.com/corbosman/listcommands/archive/2.3.5.tar.gz
+Version: 2.3.5
+
+Plugin: markasjunk2
+Source: https://github.com/JohnDoh/Roundcube-Plugin-Mark-as-Junk-2/archive/1.9.tar.gz
+Version: 1.9
+
+Plugin: message-highlight
+Source: https://github.com/corbosman/message_highlight/archive/2.6.tar.gz
+Version: 2.6
+
+Plugin: sauserprefs
+Source: https://github.com/JohnDoh/Roundcube-Plugin-SpamAssassin-User-Prefs-SQL/archive/1.15.tar.gz
+Version: 1.15
+
+Plugin: sieverules
+Source: https://github.com/JohnDoh/Roundcube-Plugin-SieveRules-Managesieve/archive/2.3.tar.gz
+Version: 2.3
+
+Plugin: thunderbird-labels
+Source: https://github.com/mike-kfed/rcmail-thunderbird-labels/archive/1.0.0.tar.gz
+Version: 1.0.0

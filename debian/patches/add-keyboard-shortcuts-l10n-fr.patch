@@ -1,0 +1,19 @@
+Description: Add french localization to keyboard_shortcuts
+Author: Jérémy Bobbio <lunar@debian.org>
+
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/fr_FR.inc
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/fr_FR.inc	2015-10-24 22:46:12.728814213 +0200
+@@ -0,0 +1,11 @@
++<?php
++
++$labels = array();
++$labels['keyboard_shortcuts'] = 'Raccourcis clavier';
++$labels['show_keyboard_shortcuts'] = 'Voir les raccourcis clavier';
++$labels['help'] = 'Aide';
++$labels['selectallvisiblemessages'] = 'Sélectionner tous les messages visibles';
++$labels['markallvisiblemessagesasread'] = 'Marquer tous les messages visibles comme lus';
++$labels['title'] = 'Raccourcis';
++
++?>

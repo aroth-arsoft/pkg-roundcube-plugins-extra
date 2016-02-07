@@ -1,0 +1,3 @@
+version=3
+opts="component=fail2ban,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/fail2ban-$1$2/g" \
+https://github.com/mattrude/rc-plugin-fail2ban/releases /mattrude/rc-plugin-fail2ban/archive/([\d\.]*)\.tar\..*

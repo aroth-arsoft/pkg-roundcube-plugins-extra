@@ -1,0 +1,3 @@
+version=3
+opts="component=dovecot-impersonate,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/dovecot-impersonate-$1$2/g" \
+https://github.com/corbosman/dovecot_impersonate/releases /corbosman/dovecot_impersonate/archive/([\d\.]*)\.tar\..*

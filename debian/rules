@@ -1,0 +1,74 @@
+#!/usr/bin/make -f
+
+INSTALL_PLUGIN_DIR = debian/roundcube-plugins-extra/usr/share/roundcube/plugins
+
+update:
+	$(CURDIR)/debian/scripts/plugins.py
+
+%:
+	dh $@
+
+override_dh_fixperms:
+	dh_fixperms
+	find $(CURDIR)/$(INSTALL_PLUGIN_DIR) \
+		-type f -print0 | xargs -0 chmod -x
+
+override_dh_auto_build:
+	>sieverules/jquery.maskedinput.js cat debian/missing-sources/jquery.maskedinput.js
+	dh_auto_build
+
+override_dh_auto_clean:
+	rm -f sieverules/jquery.maskedinput.js
+	dh_auto_clean
+
+override_dh_auto_test:
+	dh_auto_test
+	$(CURDIR)/debian/scripts/check-long-description
+
+override_dh_install:
+	# Install plugins
+	. $(CURDIR)/debian/scripts/plugin-functions.sh; \
+	for plugin in $$(get_plugins); do \
+		dh_install --exclude=LICENSE --exclude=INSTALL \
+			"$$plugin/*" usr/share/roundcube/plugins/$$plugin; \
+	done
+
+	#Convert .js back to min.js
+	for js in $$(find $(CURDIR)/debian/roundcube-plugins-extra -type f -name '*.js' -not -name '*.min.js' -print); do \
+		yui-compressor --type js "$$js" -o "$${js%.*}.min.js" ; \
+	done
+
+	# Plugins are in usr/share/roundcube/plugins, for each plugin
+	# if there is config.inc.php.dist, we symlink a config.inc.php
+	# in /etc/roundcube/plugins with some dummy content.
+	. $(CURDIR)/debian/scripts/plugin-functions.sh; \
+	for plugin in $$(get_plugins); do \
+	        dh_link usr/share/roundcube/plugins/$$plugin \
+	                var/lib/roundcube/plugins/$$plugin ; \
+	        if [ ! -f $(INSTALL_PLUGIN_DIR)/$$plugin/config.inc.php.dist ]; then continue; fi ; \
+	        dh_installdirs etc/roundcube/plugins/$$plugin ; \
+	        (echo "<?php" ; \
+	         echo "\$$config = array(); // initialize empty config array" ; \
+	         echo "// Empty configuration for $$plugin" ; \
+	         echo "// See /usr/share/roundcube/plugins/$$plugin/config.inc.php.dist for instructions") > \
+	                $(CURDIR)/debian/roundcube-plugins-extra/etc/roundcube/plugins/$$plugin/config.inc.php ; \
+	        dh_link etc/roundcube/plugins/$$plugin/config.inc.php \
+	                usr/share/roundcube/plugins/$$plugin/config.inc.php ; \
+	done
+	dh_install
+
+override_dh_installdocs:
+	dh_installdocs
+	. $(CURDIR)/debian/scripts/plugin-functions.sh; \
+	for plugin in $$(get_plugins); do \
+		for file in CHANGELOG CHANGES Changelog; do \
+			if [ -f "$(CURDIR)/$(INSTALL_PLUGIN_DIR)/$$plugin/$$file" ]; then \
+				mv "$(CURDIR)/$(INSTALL_PLUGIN_DIR)/$$plugin/$$file" "$(CURDIR)/debian/roundcube-plugins-extra/usr/share/doc/roundcube-plugins-extra/changelog.$$plugin"; \
+			fi; \
+		done; \
+		for file in README README.md readme.md MANUAL.md; do \
+			if [ -f "$(CURDIR)/$(INSTALL_PLUGIN_DIR)/$$plugin/$$file" ]; then \
+				mv "$(CURDIR)/$(INSTALL_PLUGIN_DIR)/$$plugin/$$file" "$(CURDIR)/debian/roundcube-plugins-extra/usr/share/doc/roundcube-plugins-extra/$$plugin.$$file"; \
+			fi; \
+		done; \
+	done

@@ -1,0 +1,7 @@
+# This package is a bundle of different plugins for roundcube,
+# there is no upstream roundcube-plugins-extra and no upstream changelog.
+roundcube-plugins-extra: wrong-name-for-upstream-changelog usr/share/doc/roundcube-plugins-extra/changelog.compose-addressbook.gz
+
+# This package is a bundle of different plugins for roundcube,
+# there is no upstream roundcube-plugins-extra and no upstream changelog.
+roundcube-plugins-extra: no-homepage-field

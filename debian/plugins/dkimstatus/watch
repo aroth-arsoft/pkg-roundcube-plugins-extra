@@ -1,0 +1,3 @@
+version=4
+opts="compression=xz,repack,component=dkimstatus,oversionmangle=s/^[\d.]*$/1.1.3/,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar.*)$/dkimstatus-$1$2/g" \
+http://jve.linuxwall.info/ressources/code/ dkimstatus-v?([\d\.]*)\.tar.*

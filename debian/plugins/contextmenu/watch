@@ -1,0 +1,3 @@
+version=3
+opts="component=contextmenu,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/contextmenu-$1$2/g" \
+https://github.com/JohnDoh/Roundcube-Plugin-Context-Menu/releases /JohnDoh/Roundcube-Plugin-Context-Menu/archive/([\d\.]*)\.tar\..*

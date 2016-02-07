@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+. debian/scripts/plugin-functions.sh
+
+if [ "$#" -ge 1 ]; then
+	PLUGINS="$@"
+else
+	PLUGINS="$(get_plugins)"
+fi
+
+PREFIX="../$(get_orig_prefix)"
+for plugin in $PLUGINS; do
+	DIR="$(get_plugin_dir "$plugin")"
+	ARCHIVE=
+	for ext in .tar.xz .tar.bz2 .tar.gz; do
+		if [ -f "$PREFIX-$DIR$ext" ]; then
+			ARCHIVE="$PREFIX-$DIR$ext"
+			break
+		fi
+	done
+	if [ -z "$ARCHIVE" ]; then
+		echo "Unable to find an archive for $plugin." >&2
+		exit 1
+	fi
+	mkdir -p "$DIR"
+	get_plugin_field "$plugin" 'Exclude-patterns' 2>/dev/null |
+		tar --exclude-from=- -C "$DIR" --strip-components=1 \
+			-axf "$ARCHIVE"
+done

@@ -1,0 +1,3 @@
+version=3
+opts="component=keyboard-shortcuts,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/keyboard-shortcuts-$1$2/g" \
+https://github.com/corbosman/keyboard_shortcuts/releases /corbosman/keyboard_shortcuts/archive/([\d\.]*)\.tar\..*

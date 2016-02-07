@@ -1,0 +1,161 @@
+roundcube-plugins-extra (1.1.3-20151025.2) wily; urgency=medium
+
+  * avoid warning caused by empty default config
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Sun, 07 Feb 2016 11:27:52 +0100
+
+roundcube-plugins-extra (1.1.3-20151025.1) wily; urgency=medium
+
+  * backport
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Fri, 29 Jan 2016 19:28:05 +0100
+
+roundcube-plugins-extra (1.1.3-20151025) unstable; urgency=medium
+
+  [ Vincent Bernat ]
+  * Dependency on appropriate roundcube version.
+
+  [ Sandro Knauß ]
+  * rename all plugins without version number
+  * Add nonminified js code
+    - Add yui-compressor as build-dep
+  * Update patches to point to the correct files.
+  * use uscan to search and update the plugins.
+  * Also install readme.md and MANUAL.md in docs dir
+  * There is no sieverules/lib/Net/Sieve.php anymore
+    - delete dependency for php-net-sieve
+  * Added overrides file
+  * Bump Standards-Version to 3.9.6
+    - Update copyright to copyright-format/1.0
+  * Updated fail2ban to 1.3
+  * Updated sieverules to 2.3
+
+ -- Sandro Knauß <bugs@sandroknauss.de>  Sat, 24 Oct 2015 21:59:41 +0200
+
+roundcube-plugins-extra (1.1.2-20150821) unstable; urgency=medium
+
+  * Ensure compatibility with Roundcube 1.1.2.
+    (Closes: #783679)
+  * Updated contextmenu to 2.1.2
+  * Updated dovecot-impersonate to 2.1
+  * Updated fail2ban to 1.2
+  * Updated keyboard_shortcuts to 2.4.1
+  * Updated listcommands to 2.3.5
+  * Updated markasjunk2 to 1.9
+  * Updated message-highlight to 2.6
+  * Updated sauserprefs to 1.15
+  * Updated sieverules to 2.2
+  * Updated thunderbird_labels to 1.0.0
+  * remove copymessage - merged into roundcube core
+  * remove quickrules - merged with sieverules
+  * Updated patches
+  * Updated copyright file
+  * Added myself to Uploaders.
+
+ -- Sandro Knauß <bugs@sandroknauss.de>  Fri, 21 Aug 2015 13:52:03 +0200
+
+roundcube-plugins-extra (0.9.2-20130819) unstable; urgency=low
+
+  * Ensure compatibility with Roundcube 0.9.2.
+    (Closes: #657035, #671411, #711720, #719521)
+  * Remove zipdownload as its part of Roundcube since 0.9.
+  * Upgrade compose_addressbook to version 8.0.4. (Closes: #699331)
+  * Upgrade contextmenu to version 1.10-20130303+dfsg.
+  * Upgrade copymessage to version 1.3-20130224.
+  * Upgrade dovecot_impersonate to version 2.0:
+    - Refresh make-dovecot-impersonate-compatible-with-sieverules.patch.
+  * Upgrade keyboard_shortcuts to version 2.1:
+    - Refresh add-keyboard-shortcuts-l10n-fr.patch.
+    - Refresh fix-keyboard-shortcuts-i18n.patch
+  * Upgrade listcommands to version 2.2.3:
+    - Remove obsolete add-listcommands-l10n-fr.patch
+  * Upgrade markasjunk2 to version 1.6-20130427.
+  * Upgrade message_highlight to version 2.3.
+  * Upgrade quickrules to version 1.4-20130224.
+  * Upgrade sauserprefs to version 1.10-20130224.
+  * Upgrade sieverules to version 1.18-20130507.
+  * Add thunderbird_labels (0.9)
+  * Add support for .bz2 tarballs in get-orig-tarballs.
+  * Also install files named 'Changelog' to handle thunderbird_labels.
+  * Correctly sort plugins by name in debian/plugins.
+  * Stop storing sources with Debian patches applied.
+  * Switch to use --auto-compress tar flag in extract-tarballs.
+  * Teach extract-tarballs about bz2 and xz compressed sources.
+  * Use the more specific Expat instead of MIT in debian/copyright.
+
+  [ Jan Wagner ]
+  * Add missing copyright for jquery.maskedinput.js
+
+ -- Jérémy Bobbio <lunar@debian.org>  Mon, 19 Aug 2013 18:57:51 +0200
+
+roundcube-plugins-extra (0.7-20120110) unstable; urgency=low
+
+  * Upgrade contextmenu to version 1.8-20111210.
+  * Upgrade copymessage to version 1.1-20111122.
+  * Upgrade dkimstatus to version 4.8.
+  * Upgrade fail2ban to version 1.1+20111109:
+    - Refresh debian/patches/adjust-fail2ban-readme.patch.
+  * Drop jqueryui, now part of Roundcube releases:
+    - Bump Depends to Roundcube >= 0.7-3~,
+    - Remove Depends on libjs-jquery-ui,
+    - Drop debian/patches/use-debian-jquery-ui.patch.
+  * Upgrade markasjunk2 to version 1.3-20111210.
+  * Upgrade quickrules to version 1.0-20111210.
+  * Upgrade sieverules to version 1.16-20111210.
+  * Upgrade sauserprefs to version 1.7-20111210.
+  * Upgrade zipdownload to version 1.3-20111210.
+
+ -- Jérémy Bobbio <lunar@debian.org>  Tue, 10 Jan 2012 18:28:16 +0100
+
+roundcube-plugins-extra (0.6-20111030) unstable; urgency=low
+
+  * Use system-wide PEAR Net_Sieve instead of the embedded copy in sieverules.
+    (Closes: #645637)
+
+ -- Jérémy Bobbio <lunar@debian.org>  Sat, 05 Nov 2011 14:36:17 +0100
+
+roundcube-plugins-extra (0.6-20111017) unstable; urgency=low
+
+  * Plugins now target Roundcube version 0.6.
+  * Fix internationalization issue in keyboard_shortcuts.
+  * Add french localization to keyboard_shortcuts.
+  * Add french localization to listcommands.
+  * Upgrade contextmenu to version 1.8-20110902.
+  * Upgrade copymessage to version 1.1-20110218.
+  * Upgrade markasjunk2 to version 1.3-20110922.
+  * Add quickrules (1.0-20110926).
+  * Upgrade sieverules to version 1.14-20110924.
+  * Make dovecot_impersonate compatible with sieverules.
+  * Upgrade zipdownload to version 1.3-20110619.
+  * Adjust source and version for sauserprefs.
+  * Update and fix debian/copyright.
+
+ -- Jérémy Bobbio <lunar@debian.org>  Mon, 17 Oct 2011 11:46:14 +0200
+
+roundcube-plugins-extra (0.5.4-20110919) unstable; urgency=low
+
+  * Bump version number for Roundcube to 0.5.4.
+  * Upgrade sieverules to version 1.11-20110813.
+  * Label jqueryui as version 1.8+dfsg instead of 1.8.12+dfsg.
+  * Upgrade sauserprefs to version 1.6-20110828.
+  * Upgrade markasjunk2 to version 1.3.
+  * Fix typo in debian/copyright.
+  * Use system-wide jQuery Mousewheel plugin in contextmenu.
+
+ -- Jérémy Bobbio <lunar@debian.org>  Mon, 19 Sep 2011 17:13:54 +0200
+
+roundcube-plugins-extra (0.5.3-20110719) unstable; urgency=low
+
+  * Compress plain tar archives in debian/scripts/get-orig-tarballs.
+  * Exclude INSTALL and Exclude-patterns from installed files.
+  * Add fail2ban (1.1).
+  * Add zipdownload (1.3).
+  * Add dkimstatus (4.7).
+
+ -- Jérémy Bobbio <lunar@debian.org>  Tue, 19 Jul 2011 15:58:07 +0200
+
+roundcube-plugins-extra (0.5.3-20110619) unstable; urgency=low
+
+  * Initial release.
+
+ -- Jérémy Bobbio <lunar@debian.org>  Sun, 19 Jun 2011 02:59:56 +0200

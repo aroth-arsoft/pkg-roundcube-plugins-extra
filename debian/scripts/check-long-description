@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+. debian/scripts/plugin-functions.sh
+
+MISSING=""
+for plugin in $(get_plugins); do
+	if ! grep -q --fixed-strings -e "$plugin" debian/control; then
+		MISSING="${MISSING:+$MISSING, }$plugin"
+	fi
+done
+if [ "$MISSING" ]; then
+	echo "Missing from debian/control: $MISSING" >&2
+	exit 1
+fi

@@ -1,0 +1,35 @@
+Description: Adjust fail2ban README to Debian
+Author: Jérémy Bobbio <lunar@debian.org>
+Forwarded: not-needed
+
+Index: roundcube-plugins-extra/fail2ban/readme.md
+===================================================================
+--- roundcube-plugins-extra.orig/fail2ban/readme.md	2015-10-24 22:46:00.925359032 +0200
++++ roundcube-plugins-extra/fail2ban/readme.md	2015-10-24 22:46:00.922025665 +0200
+@@ -29,15 +29,12 @@
+ 
+ ## Installing
+ 
+-1.  Place this plugin folder into the RoundCube plugins directory (roundcube/plugins/)
+-2.  Add fail2ban to $rcmail_config['plugins'] in your RoundCube config
+-
+-**Note:** When downloading this plugin from <http://github.com/mattrude/rc-plugin-fail2ban> you will need to create a directory called fail2ban and place fail2ban.php in there, ignoring the root directory in the downloaded archive. You may also run '**git clone git://github.com/mattrude/rc-plugin-fail2ban.git fail2ban**' from the plugins directory.
++*  Add fail2ban to $rcmail_config['plugins'] in your RoundCube config
+ 
+   
+ ## Setting Up
+ 
+-**fail2ban/jail.conf:**
++**/etc/fail2ban/jail.conf:**
+ 
+ <pre>[roundcube]
+ enabled  = true
+@@ -58,7 +55,7 @@
+ sendmail-whois[name=RC-Webmail, dest=you@example.com, sender=fail2ban]
+ logpath  = /srv/www/htdocs/webmail/logs/userlogins</pre>
+ 
+-**fail2ban/filter.d/roundcube.conf:**
++**/etc/fail2ban/filter.d/roundcube.conf:**
+ 
+ <pre>[Definition]
+ failregex = FAILED login for .*. from &lt;HOST&gt;

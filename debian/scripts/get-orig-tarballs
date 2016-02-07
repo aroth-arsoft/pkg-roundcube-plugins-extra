@@ -1,0 +1,40 @@
+#!/bin/sh
+
+set -e
+
+. debian/scripts/plugin-functions.sh
+
+if [ "$#" -ge 1 ]; then
+	PLUGINS="$@"
+else
+	PLUGINS="$(get_plugins)"
+fi
+
+PREFIX="../$(get_orig_prefix)"
+for plugin in $PLUGINS; do
+	VERSION="$(get_plugin_field "$plugin" Version)"
+	SOURCE="$(get_plugin_field "$plugin" Source)"
+	DIR="$(get_plugin_dir "$plugin")"
+	echo "Downloading $plugin ($VERSION) from $SOURCE" >&2
+	case "$SOURCE" in
+	    *.bz2)
+		wget -q -c -O"$PREFIX-$DIR.tar.bz2" "$SOURCE"
+		;;
+	    *.tar)
+		wget -q -c -O"$PREFIX-$DIR.tar" "$SOURCE"
+		gzip -9 "$PREFIX-$DIR.tar"
+		;;
+	    *)
+		wget -q -c -O"$PREFIX-$DIR.tar.gz" "$SOURCE"
+		;;
+	esac
+	if [ "$(get_plugin_field "$plugin" "Repack" 2>/dev/null)" = "yes" ]; then
+		TMPDIR=$(mktemp -d)
+		#trap 'rm -rf "$TMPDIR"' EXIT
+		mkdir -p "$TMPDIR/$plugin"
+		get_plugin_field "$plugin" 'Exclude-patterns' 2>/dev/null |
+			tar --exclude-from=- -C "$TMPDIR/$plugin" --strip-components=1 \
+				-zxf "$PREFIX-$DIR.tar.gz"
+		tar -C "$TMPDIR" -zcf "$PREFIX-$DIR.tar.gz" "$plugin"
+	fi
+done

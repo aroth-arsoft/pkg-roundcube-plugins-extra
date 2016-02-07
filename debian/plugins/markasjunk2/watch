@@ -1,0 +1,3 @@
+version=3
+opts="component=markasjunk2,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/markasjunk2-$1$2/g" \
+https://github.com/JohnDoh/Roundcube-Plugin-Mark-as-Junk-2/releases /JohnDoh/Roundcube-Plugin-Mark-as-Junk-2/archive/([\d\.]*)\.tar\..*

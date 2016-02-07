@@ -1,0 +1,41 @@
+Source: roundcube-plugins-extra
+Section: web
+Priority: extra
+Maintainer: Debian Roundcube Maintainers <pkg-roundcube-maintainers@lists.alioth.debian.org>
+Uploaders: Jérémy Bobbio <lunar@debian.org>, Sandro Knauß <bugs@sandroknauss.de>
+Build-Depends: debhelper (>= 7.0.50~),
+               yui-compressor
+Standards-Version: 3.9.6
+Vcs-Git: git://anonscm.debian.org/pkg-roundcube/roundcube-plugins-extra.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-roundcube/roundcube-plugins-extra.git
+
+Package: roundcube-plugins-extra
+Architecture: all
+Depends: libjs-jquery-mousewheel,
+         roundcube-core (>= 1.1.2),
+         ${misc:Depends}
+Suggests: fail2ban
+Description: skinnable AJAX based webmail solution - extra plugins
+ RoundCube Webmail is a browser-based multilingual IMAP client with an
+ application-like user interface. It provides full functionality
+ expected from an e-mail client, including MIME support, address book,
+ folder manipulation and message filters.
+ .
+ The user interface is fully skinnable using XHTML and CSS 2.
+ .
+ This package provides a collection of several plugins for Roundcube that
+ are not maintained directly by Roundcube authors, namely:
+  - compose-addressbook
+  - contextmenu
+  - dkimstatus
+  - dovecot-impersonate
+  - fail2ban
+  - keyboard-shortcuts
+  - listcommands
+  - markasjunk2
+  - message-highlight
+  - sauserprefs
+  - sieverules
+  - thunderbird-labels
+ .
+ They should be enabled in the configuration of Roundcube.

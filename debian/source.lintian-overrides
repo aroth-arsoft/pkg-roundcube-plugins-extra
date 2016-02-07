@@ -1,0 +1,7 @@
+# it is a combination of different plugins, that have own version numbers
+# use debian/scripts/plugins.py for updating the plugins
+roundcube-plugins-extra source: debian-watch-file-is-missing
+
+# Mistakes from Lintian
+roundcube-plugins-extra source: source-is-missing message-highlight/colorpicker/mColorPicker.js
+roundcube-plugins-extra source: source-is-missing contextmenu/skins/larry/functions.js

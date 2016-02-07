@@ -1,0 +1,65 @@
+README.source for the roundcube-plugins-extra package
+=====================================================
+
+roundcube-plugins-extra is a collection of plugins for the Roundcube webmail
+that are not maintained by Roundcube upstreams. This package aggregates
+plugins from different sources, using the "multiple upstream tarballs" feature
+introduced in Debian package source format 3.0.
+
+For more informations about "multiple upstream tarball", please look up the
+relevant F.A.Q entry:
+
+  http://wiki.debian.org/Projects/DebSrc3.0#How_to_use_multiple_upstream_tarball_in_3.0_.28quilt.29_format.3F
+
+Version number
+--------------
+
+The upstream package version number should be the some as the upstream version
+number of the roundcube package.
+
+The Debian revision is made with the date of the package upload.
+
+Example:
+
+                 package upload date
+                      vvvvvvvv
+                0.5.1-20110529
+                ^^^^^
+       roundcube version number
+
+How to add a new plugin
+-----------------------
+
+1. Add a new 'Plugin' paragraph in `debian/plugins.overview`.
+2. Add the needed watch file to `debian/plugins/<plugin>/watch.
+   The component should be the `Plugin` name. Do not rename the tarball with +dfsg,
+   if you exclude files, otherwise the component tarball will not be found.
+2. Call `debian/rules update` to download the new tarball and extract it.
+4. Look at its files and document their license in `debian/copyright`.
+   For excluding files in the tarball use:
+   `Files-Excluded-<plugin>` in the first paragraph.
+5. Mention the plugin in the extended description of the package
+   in `debian/control`.
+
+`debian/plugins`
+----------------
+
+The `debian/plugins.overview` describe the plugins shipped in `roundcube-plugins-extra`
+in a machine-readable format.
+
+It mimics the RFC822-like format of many Debian files.
+
+Each plugin is described in a 'Plugin' paragraph with the following fields:
+
+ * 'Plugin' contains the short name of the plugin,
+ * 'Source' is the URL with the plugin tarball,
+ * 'Version' contains the plugin version.
+
+An example:
+
+    Plugin: sieverules
+    Source: http://www.tehinterweb.co.uk/roundcube/plugins/sieverules.tar.gz
+    Version: 1.11
+
+The plugin version MUST be incremented every time there is an upstream update,
+otherwise there will be an issue on the next package upload.

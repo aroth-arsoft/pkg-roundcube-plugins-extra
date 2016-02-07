@@ -1,0 +1,3 @@
+version=4
+opts="component=sieverules,oversionmangle=s/^[\d.]*$/1.1.3/,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/sieverules-$1$2/g" \
+https://github.com/JohnDoh/Roundcube-Plugin-SieveRules-Managesieve/releases /JohnDoh/Roundcube-Plugin-SieveRules-Managesieve/archive/([\d\.]*)\.tar\..*

@@ -1,0 +1,3 @@
+version=3
+opts="component=thunderbird-labels,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/thunderbird-labels-$1$2/g" \
+https://github.com/mike-kfed/rcmail-thunderbird-labels/releases /mike-kfed/rcmail-thunderbird-labels/archive/([\d\.]*)\.tar\..*

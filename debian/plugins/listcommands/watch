@@ -1,0 +1,3 @@
+version=3
+opts="component=listcommands,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/listcommands-$1$2/g" \
+https://github.com/corbosman/listcommands/releases /corbosman/listcommands/archive/([\d\.]*)\.tar\..*

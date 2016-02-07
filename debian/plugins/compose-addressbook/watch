@@ -1,0 +1,3 @@
+version=3
+opts="component=compose-addressbook,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/compose-addressbook-$1$2/g" \
+https://github.com/corbosman/compose_addressbook/releases /corbosman/compose_addressbook/archive/([\d\.]*)\.tar\..*

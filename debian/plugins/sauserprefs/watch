@@ -1,0 +1,3 @@
+version=3
+opts="component=sauserprefs,oversionmangle=s/^[\d.]*$/1.1.3/,dversionmangle=s/\+dfsg\d*$//,repacksuffix=+dfsg,filenamemangle=s/(?:.*?)?v?(\d[\d.]*)(\.tar\..*)$/sauserprefs-$1$2/g" \
+https://github.com/JohnDoh/Roundcube-Plugin-SpamAssassin-User-Prefs-SQL/releases /JohnDoh/Roundcube-Plugin-SpamAssassin-User-Prefs-SQL/archive/([\d\.]*)\.tar\..*

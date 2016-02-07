@@ -1,0 +1,120 @@
+Description: Fix internationalization issue in keyboard_shortcuts
+Author: Jérémy Bobbio <lunar@debian.org>
+
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/cs_CZ.inc
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/localization/cs_CZ.inc	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/cs_CZ.inc	2015-10-25 13:45:16.403493935 +0100
+@@ -16,7 +16,7 @@
+ 
+ $labels = array();
+ $labels['keyboard_shortcuts'] = 'Klávesnicové zkratky';
+-$labels['show'] = 'Zobrazit';
++$labels['show_keyboard_shortcuts'] = 'Zobrazit klávesnicové zkratky';
+ $labels['help'] = 'Nápověda';
+ $labels['selectallvisiblemessages'] = 'Vybrat všechny viditelné zprávy';
+ $labels['markallvisiblemessagesasread'] = 'Označit všechny viditelné zprávy jako přečtené';
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/de_DE.inc
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/localization/de_DE.inc	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/de_DE.inc	2015-10-25 13:45:16.403493935 +0100
+@@ -2,7 +2,7 @@
+ 
+ $labels = array();
+ $labels['keyboard_shortcuts'] = 'Tastatur Shortcuts';
+-$labels['show'] = 'Anzeigen';
++$labels['show_keyboard_shortcuts'] = 'Anzeigen Tastatur Shortcuts';
+ $labels['help'] = 'Hilfe';
+ $labels['selectallvisiblemessages'] = 'Alle Nachrichten auswählen';
+ $labels['markallvisiblemessagesasread'] = 'Alle Nachrichten als gelesen markieren';
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/en_US.inc
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/localization/en_US.inc	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/en_US.inc	2015-10-25 13:45:16.403493935 +0100
+@@ -2,7 +2,7 @@
+ 
+ $labels = array();
+ $labels['keyboard_shortcuts'] = 'Keyboard shortcuts';
+-$labels['show'] = 'Show';
++$labels['show_keyboard_shortcuts'] = 'Show keyboard shortcuts';
+ $labels['help'] = 'Help';
+ $labels['selectallvisiblemessages'] = 'Select all visible messages';
+ $labels['markallvisiblemessagesasread'] = 'Mark all visible messages as read';
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/nl_NL.inc
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/localization/nl_NL.inc	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/nl_NL.inc	2015-10-25 13:45:16.403493935 +0100
+@@ -2,7 +2,7 @@
+ 
+ $labels = array();
+ $labels['keyboard_shortcuts'] = 'Sneltoetsen';
+-$labels['show'] = 'Show';
++$labels['show_keyboard_shortcuts'] = 'Show sneltoetsen';
+ $labels['help'] = 'Help';
+ $labels['selectallvisiblemessages'] = 'Selecteer alle berichten op deze pagina';
+ $labels['markallvisiblemessagesasread'] = 'Markeer alle berichten op deze pagina als gelezen';
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/pl_PL.inc
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/localization/pl_PL.inc	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/pl_PL.inc	2015-10-25 13:45:16.403493935 +0100
+@@ -3,7 +3,7 @@
+ 
+ $labels = array();
+ $labels['keyboard_shortcuts'] = 'Skróty klawiszowe';
+-$labels['show'] = 'Pokaż';
++$labels['show_keyboard_shortcuts'] = 'Pokaż skróty klawiszowe';
+ $labels['help'] = 'Pomoc';
+ $labels['selectallvisiblemessages'] = 'Zaznacz wszystkie widoczne wiadomości';
+ $labels['markallvisiblemessagesasread'] = 'Zaznacz wszystkie widoczne wiadomości jako przeczytane';
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/ru_RU.inc
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/localization/ru_RU.inc	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/ru_RU.inc	2015-10-25 13:45:16.406827303 +0100
+@@ -2,7 +2,7 @@
+ 
+ $labels = array();
+ $labels['keyboard_shortcuts'] = 'Горячие клавиши';
+-$labels['show'] = 'Показать';
++$labels['show_keyboard_shortcuts'] = 'Показать Горячие клавиши';
+ $labels['help'] = 'Помощь';
+ $labels['selectallvisiblemessages'] = 'Выделить все видимые сообщения';
+ $labels['markallvisiblemessagesasread'] = 'Пометить все видимые сообщения как прочитанные';
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/sv_SE.inc
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/localization/sv_SE.inc	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/sv_SE.inc	2015-10-25 13:45:16.406827303 +0100
+@@ -2,7 +2,7 @@
+ 
+ $labels = array();
+ $labels['keyboard_shortcuts'] = 'Kortkommandon';
+-$labels['show'] = 'Visa';
++$labels['show_keyboard_shortcuts'] = 'Visa kortkommandon';
+ $labels['help'] = 'Hj&auml;lp';
+ $labels['selectallvisiblemessages'] = 'Markera alla synliga meddelanden';
+ $labels['markallvisiblemessagesasread'] = 'Markera alla synliga meddelanden som l&auml;sta';
+Index: roundcube-plugins-extra/keyboard-shortcuts/localization/zh_TW.inc
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/localization/zh_TW.inc	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/localization/zh_TW.inc	2015-10-25 13:45:16.406827303 +0100
+@@ -2,7 +2,7 @@
+ 
+ $labels = array();
+ $labels['keyboard_shortcuts'] = '快速鍵';
+-$labels['show'] = '顯示';
++$labels['show_keyboard_shortcuts'] = '顯示快速鍵';
+ $labels['help'] = '說明';
+ $labels['selectallvisiblemessages'] = '選擇所有此頁的訊息';
+ $labels['markallvisiblemessagesasread'] = '標示所有此頁訊息以閱讀';
+Index: roundcube-plugins-extra/keyboard-shortcuts/keyboard_shortcuts.php
+===================================================================
+--- roundcube-plugins-extra.orig/keyboard-shortcuts/keyboard_shortcuts.php	2015-10-25 13:45:16.410160671 +0100
++++ roundcube-plugins-extra/keyboard-shortcuts/keyboard_shortcuts.php	2015-10-25 13:47:51.255086764 +0100
+@@ -75,7 +75,7 @@
+         $keyboard_shortcuts = $rcmail->config->get('keyboard_shortcuts_extras', array());
+ 
+         $c = "";
+-        $c .= '<span id="keyboard_shortcuts_title">' . $this->gettext("title") . ":&nbsp;</span><a id='keyboard_shortcuts_link' href='#' class='button' title='".$this->gettext("keyboard_shortcuts")." ".$this->gettext("show")."' onclick='return keyboard_shortcuts_show_help()'><img align='top' src='plugins/keyboard_shortcuts/skins/".$skin."/images/keyboard.png' alt='".$this->gettext("keyboard_shortcuts")." ".$this->gettext("show")."' /></a>\n";
++        $c .= '<span id="keyboard_shortcuts_title">' . $this->gettext("title") . ":&nbsp;</span><a id='keyboard_shortcuts_link' href='#' class='button' title='".$this->gettext("show_keyboard_shortcuts")." ".$this->gettext("show")."' onclick='return keyboard_shortcuts_show_help()'><img align='top' src='plugins/keyboard_shortcuts/skins/".$skin."/images/keyboard.png' alt='".$this->gettext("keyboard_shortcuts")." ".$this->gettext("show")."' /></a>\n";
+         $c .= "<div id='keyboard_shortcuts_help'>";
+         $c .= "<div><h4>".$this->gettext("mailboxview")."</h4>";
+         $c .= "<div class='shortcut_key'>?</div> ".$this->gettext('help')."<br class='clear' />";
